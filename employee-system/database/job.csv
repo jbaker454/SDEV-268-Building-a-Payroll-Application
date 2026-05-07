@@ -1,0 +1,5 @@
+job_id,department_id,title,base_salary
+1,1,Software Engineer,80000
+2,1,QA Engineer,70000
+3,2,HR Manager,65000
+4,3,Sales Associate,50000

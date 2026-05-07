@@ -1,1 +1,5 @@
 com\jbaker454\Main.class
+com\jbaker454\AuthService.class
+com\jbaker454\AuthService$User.class
+com\jbaker454\DatabaseSetup.class
+com\jbaker454\LoginController.class

@@ -1,0 +1,13 @@
+employee_id,job_id,first_name,last_name,date_hired,date_of_birth,email,status_id,pay_type_id,medical_plan_id,address_id,image_url
+1,1,John,Doe,2024-01-01,2000-05-10,john.doe@email.com,1,1,1,1,
+2,2,Jane,Smith,2023-06-15,1998-09-20,jane.smith@email.com,1,1,2,2,
+3,4,Mike,Johnson,2022-03-10,1995-12-01,mike.j@email.com,1,2,1,3,
+4,3,Emily,Chen,2023-11-01,1990-11-12,emily.chen@email.com,1,1,2,1,
+5,1,Daniel,Martinez,2021-08-22,1992-04-17,daniel.martinez@email.com,1,1,1,2,
+6,2,Sophia,Patel,2024-05-06,1999-02-28,sophia.patel@email.com,1,2,1,3,
+7,4,Kevin,Brown,2022-09-14,1988-07-30,kevin.brown@email.com,2,2,2,1,
+8,1,Lisa,Anderson,2020-12-01,1985-10-05,lisa.anderson@email.com,1,1,2,2,
+9,3,Marcus,Lee,2023-03-18,1993-01-08,marcus.lee@email.com,1,1,1,3,
+10,2,Nina,Garcia,2022-06-21,1997-04-26,nina.garcia@email.com,1,2,2,1,
+11,4,Ryan,Nguyen,2021-02-10,1990-09-11,ryan.nguyen@email.com,1,2,1,2,
+12,1,Hannah,Williams,2023-07-30,1996-11-19,hannah.williams@email.com,1,1,2,3,
