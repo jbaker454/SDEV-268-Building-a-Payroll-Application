@@ -1,3 +1,5 @@
 dependent_id,employee_id,name,relationship,date_of_birth
 1,1,Anna Doe,Child,2015-04-10
 2,2,Tom Smith,Spouse,1997-02-14
+3,3,Mia Brown,Child,2018-09-05
+4,5,Noah Wilson,Spouse,1988-11-12

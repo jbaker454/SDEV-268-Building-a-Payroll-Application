@@ -2,3 +2,12 @@ address_id,line1,line2,city,state,zip
 1,123 Main St,,Chicago,IL,60601
 2,456 Oak Ave,Apt 2,Houston,TX,77001
 3,789 Pine Rd,,Seattle,WA,98101
+4,321 Maple Ln,,Denver,CO,80203
+5,654 Elm St,Suite 110,Boston,MA,02110
+6,987 Cedar Blvd,,Atlanta,GA,30303
+7,250 Lakeview Dr,Unit 5,Minneapolis,MN,55401
+8,111 River Rd,,Phoenix,AZ,85001
+9,500 Ocean Blvd,Apt 7,Miami,FL,33101
+10,210 Hill St,,Portland,OR,97201
+11,77 Broadway,Floor 4,New York,NY,10007
+12,19 Sunset Way,,San Diego,CA,92101

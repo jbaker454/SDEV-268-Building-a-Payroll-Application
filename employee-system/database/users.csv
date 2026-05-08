@@ -1,0 +1,4 @@
+user_id,username,password_hash,role,employee_id
+1,HR0001,$2b$12$5/kwee5EtYzC7VEIUx82Ceu1aXqsbzRGByGm.DNVbBjW1quiTvVN6,HR,3
+2,ADMIN001,$2b$12$f4BwzSwlV84Qj3nWyXICu.EaxnuQkrjpQaBQRxEWwYH7KmJG2Bu/S,ADMIN,5
+3,EMP0001,$2b$12$.4ucyC3/69zPwS2qS8/P/uasz4cQzle6LYvEEKxAQx33wHdTVga2e,EMPLOYEE,1

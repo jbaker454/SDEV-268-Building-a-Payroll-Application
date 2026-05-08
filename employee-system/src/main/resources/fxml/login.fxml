@@ -8,27 +8,28 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.VBox?>
 
-<VBox prefHeight="300.0" prefWidth="500.0" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1">
+<VBox prefHeight="300.0" prefWidth="500.0" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.jbaker454.LoginController">
    <children>
       <Pane prefHeight="300.0" prefWidth="500.0">
          <children>
-            <Button id="LoginButton" layoutX="363.0" layoutY="158.0" mnemonicParsing="false" text="Login" />
             <VBox layoutX="111.0" layoutY="38.0" prefHeight="271.0" prefWidth="279.0">
                <children>
                   <HBox prefHeight="56.0" prefWidth="279.0">
                      <children>
                         <Label id="LoginUserName" prefHeight="25.0" prefWidth="80.0" text="Username:" />
-                        <TextField />
+                        <TextField fx:id="usernameField" />
                      </children>
                   </HBox>
                   <HBox prefHeight="51.0" prefWidth="279.0">
                      <children>
                         <Label prefHeight="25.0" prefWidth="80.0" text="Password:" />
-                        <PasswordField />
+                        <PasswordField fx:id="passwordField" />
                      </children>
                   </HBox>
+                  <Label fx:id="errorLabel" layoutX="111.0" layoutY="190.0" textFill="RED" wrapText="true" />
                </children>
             </VBox>
+            <Button layoutX="363.0" layoutY="220.0" mnemonicParsing="false" onAction="#handleLogin" text="Login" />
          </children>
       </Pane>
    </children>

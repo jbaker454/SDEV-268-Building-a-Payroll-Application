@@ -1,11 +1,6 @@
--- database: ./company.db
+-- database: company.db
 
--- Enable foreign key enforcement
 PRAGMA foreign_keys = ON;
-
--- =========================
--- Lookup Tables
--- =========================
 
 CREATE TABLE employment_status (
   id INTEGER PRIMARY KEY,
@@ -21,10 +16,6 @@ CREATE TABLE medical_plan (
   id INTEGER PRIMARY KEY,
   name TEXT NOT NULL UNIQUE
 );
-
--- =========================
--- Core Tables
--- =========================
 
 CREATE TABLE department (
   department_id INTEGER PRIMARY KEY,
@@ -61,22 +52,14 @@ CREATE TABLE employee (
   medical_plan_id INTEGER,
   address_id INTEGER,
   image_url TEXT,
-
   created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
   updated_at DATETIME,
-
   FOREIGN KEY (job_id) REFERENCES job(job_id),
   FOREIGN KEY (status_id) REFERENCES employment_status(id),
   FOREIGN KEY (pay_type_id) REFERENCES pay_type(id),
   FOREIGN KEY (medical_plan_id) REFERENCES medical_plan(id),
-  FOREIGN KEY (address_id) REFERENCES address(address_id),
-
-  CHECK (date_of_birth <= DATE('now', '-18 years'))
+  FOREIGN KEY (address_id) REFERENCES address(address_id)
 );
-
--- =========================
--- Dependents
--- =========================
 
 CREATE TABLE dependent (
   dependent_id INTEGER PRIMARY KEY,
@@ -84,13 +67,8 @@ CREATE TABLE dependent (
   name TEXT NOT NULL,
   relationship TEXT,
   date_of_birth DATE,
-
   FOREIGN KEY (employee_id) REFERENCES employee(employee_id)
 );
-
--- =========================
--- Job History
--- =========================
 
 CREATE TABLE employee_job_history (
   id INTEGER PRIMARY KEY,
@@ -98,29 +76,18 @@ CREATE TABLE employee_job_history (
   job_id INTEGER NOT NULL,
   start_date DATE NOT NULL,
   end_date DATE,
-
   FOREIGN KEY (employee_id) REFERENCES employee(employee_id),
   FOREIGN KEY (job_id) REFERENCES job(job_id)
 );
-
--- =========================
--- Time Tracking
--- =========================
 
 CREATE TABLE time_entry (
   id INTEGER PRIMARY KEY,
   employee_id INTEGER NOT NULL,
   clock_in DATETIME NOT NULL,
   clock_out DATETIME,
-
   FOREIGN KEY (employee_id) REFERENCES employee(employee_id),
-
   CHECK (clock_out IS NULL OR clock_out > clock_in)
 );
-
--- =========================
--- Indexes (performance boost)
--- =========================
 
 CREATE INDEX idx_employee_job ON employee(job_id);
 CREATE INDEX idx_employee_status ON employee(status_id);

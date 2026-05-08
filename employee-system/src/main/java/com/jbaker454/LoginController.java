@@ -1,11 +1,17 @@
 package com.jbaker454;
 
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.control.Button;
-import javafx.scene.control.ComboBox;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
+import javafx.stage.Stage;
+import javafx.scene.Node;
+
+import java.io.IOException;
 
 public class LoginController {
 
@@ -16,26 +22,46 @@ public class LoginController {
     private PasswordField passwordField;
 
     @FXML
-    private ComboBox<String> roleComboBox;
-
-    @FXML
     private Label errorLabel;
 
     @FXML
-    private void handleLogin() {
+    private void handleLogin(ActionEvent event) throws IOException {
         String username = usernameField.getText().trim();
         String password = passwordField.getText();
-        String role = roleComboBox.getValue();
 
-        if (username.isEmpty() || password.isEmpty() || role == null) {
+        if (username.isEmpty() || password.isEmpty()) {
             errorLabel.setText("Please fill all fields.");
             return;
         }
 
         AuthService.User user = AuthService.authenticate(username, password);
-        if (user != null && user.role.equals(role)) {
-            errorLabel.setText("Login successful! Welcome " + user.role);
-            // TODO: Navigate to role-specific view
+        if (user != null) {
+            String role = user.role == null ? "" : user.role.toUpperCase();
+            String fxmlPath;
+            String title;
+            switch (role) {
+                case "ADMIN" -> {
+                    fxmlPath = "/fxml/AdminView.fxml";
+                    title = "Admin Dashboard";
+                }
+                case "EMPLOYEE" -> {
+                    fxmlPath = "/fxml/EmployeeView.fxml";
+                    title = "Employee View";
+                }
+                case "HR" -> {
+                    fxmlPath = "/fxml/HRView.fxml";
+                    title = "HR Dashboard";
+                }
+                default -> {
+                    errorLabel.setText("Unknown role assigned to user.");
+                    return;
+                }
+            }
+
+            Parent root = FXMLLoader.load(getClass().getResource(fxmlPath));
+            Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            stage.setScene(new Scene(root));
+            stage.setTitle(title);
         } else {
             errorLabel.setText("Invalid credentials.");
         }
