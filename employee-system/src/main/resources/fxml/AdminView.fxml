@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1">
+  <top>
+    <HBox alignment="CENTER_LEFT" spacing="12.0" style="-fx-background-color: #2c3e50; -fx-padding: 12;">
+      <children>
+        <Label text="Admin Dashboard" style="-fx-text-fill: white; -fx-font-size: 18px; -fx-font-weight: bold;" />
+      </children>
+    </HBox>
+  </top>
+  <center>
+    <VBox alignment="TOP_CENTER" spacing="16.0" style="-fx-padding: 24;">
+      <children>
+        <Button mnemonicParsing="false" text="Manage Employees" prefWidth="240.0" />
+        <Button mnemonicParsing="false" text="Manage Departments" prefWidth="240.0" />
+        <Button mnemonicParsing="false" text="View Reports" prefWidth="240.0" />
+        <Button mnemonicParsing="false" text="System Settings" prefWidth="240.0" />
+      </children>
+    </VBox>
+  </center>
+</BorderPane>
