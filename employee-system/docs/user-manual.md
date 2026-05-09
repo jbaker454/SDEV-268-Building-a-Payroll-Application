@@ -1,15 +1,15 @@
 # user manual
-
 - run on terminal EMPLOYEE-SYSTEM
 
 ## build
+- run DatabaseSetUp.sqlite3-query
+- run load_csv_to_db.py
 - mvn clean compile
 
 ## run
 - mvn javafx:run
 
 ## test login
-
 ### Admin Account
 - Username: ADMIN001
 - Password: admin123

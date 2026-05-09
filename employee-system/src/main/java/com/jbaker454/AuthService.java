@@ -10,6 +10,7 @@ import java.sql.SQLException;
 
 public class AuthService {
     private static final String DB_URL = "jdbc:sqlite:database/company.db";
+    private static User currentUser;
 
     public static class User {
         public int userId;
@@ -38,11 +39,12 @@ public class AuthService {
                 String hash = rs.getString("password_hash");
                 BCrypt.Result result = BCrypt.verifyer().verify(password.toCharArray(), hash);
                 if (result.verified) {
+                    Integer employeeId = rs.getObject("employee_id", Integer.class);
                     return new User(
                         rs.getInt("user_id"),
                         rs.getString("username"),
                         rs.getString("role"),
-                        rs.getInt("employee_id") // may be null
+                        employeeId
                     );
                 }
             }
@@ -50,6 +52,14 @@ public class AuthService {
             e.printStackTrace();
         }
         return null;
+    }
+
+    public static void setCurrentUser(User user) {
+        currentUser = user;
+    }
+
+    public static User getCurrentUser() {
+        return currentUser;
     }
 
     public static void createUser(String username, String password, String role, Integer employeeId) {

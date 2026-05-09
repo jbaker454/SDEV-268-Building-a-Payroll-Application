@@ -20,40 +20,40 @@ A Java-based payroll and employee management system using a SQLite database. The
 - Testing and documentation
 
 ## Milestones
-1. Project Setup and Repository
+1. Project Setup and Repository  --complete--
    - Create GitHub repository
    - Add `docs/` and initial project documentation
    - Configure Maven project structure and dependencies
 
-2. Data Model and Database
+2. Data Model and Database  --complete--
    - Design database schema for employee system entities
    - Implement SQLite schema and seed data with 12 test employees
    - Verify the database connection from Java
 
-3. Authentication and Authorization
+3. Authentication and Authorization  --complete--
    - Create login screen with username/password inputs
    - Implement role-based access for Employee, HR, and Admin
    - Secure the login flow and validate credentials
 
-4. Employee Functionality
+4. Employee Functionality  --complete--
    - Show employee profile details
    - Allow employees to view and submit time entries
    - Add PTO tracking or request interface
    - Add simple paycheck calculation or preview
 
-5. HR Functionality
+5. HR Functionality  --complete--
    - Enable HR users to search employees
    - Show demographic and payroll details for selected employees
    - Allow HR to add/edit employee records where appropriate
    - Generate payroll or summary reports for review
 
-6. Admin Functionality
+6. Admin Functionality --in progress--
    - Provide full CRUD operations for employee records
    - Manage jobs, departments, and pay types
    - Display application status/version information
    - Add administrative security and configuration controls
 
-7. Testing and Documentation
+7. Testing and Documentation --incomplete--
    - Create test cases for login, role access, and database operations
    - Validate payroll calculations and CRUD operations
    - Document the application setup, data model, and user flows

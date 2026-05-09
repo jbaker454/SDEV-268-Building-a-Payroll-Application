@@ -6,7 +6,7 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 
-<BorderPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1">
+<BorderPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.jbaker454.EmployeeViewController">
   <top>
     <HBox alignment="CENTER_LEFT" spacing="12.0" style="-fx-background-color: #34495e; -fx-padding: 12;">
       <children>
@@ -17,12 +17,15 @@
   <center>
     <VBox alignment="TOP_CENTER" spacing="14.0" style="-fx-padding: 20;">
       <children>
-        <Label text="Welcome back! Here is your daily summary." />
-        <TextArea editable="false" prefHeight="220.0" prefWidth="520.0" text="Upcoming shifts, announcements, and personal details appear here." />
+        <Label fx:id="welcomeLabel" text="Welcome back! Here is your daily summary." />
+        <TextArea fx:id="statusTextArea" editable="false" wrapText="true" prefHeight="220.0" prefWidth="520.0" />
         <HBox alignment="CENTER" spacing="10.0">
           <children>
-            <Button mnemonicParsing="false" text="View Schedule" />
-            <Button mnemonicParsing="false" text="Submit Time Entry" />
+            <Button fx:id="viewProfileButton" mnemonicParsing="false" text="View Profile" onAction="#handleViewProfile" />
+            <Button mnemonicParsing="false" text="View Schedule" onAction="#handleViewSchedule" />
+            <Button fx:id="clockInButton" mnemonicParsing="false" disable="true" text="Clock In" onAction="#handleClockIn" />
+            <Button fx:id="clockOutButton" mnemonicParsing="false" disable="true" text="Clock Out" onAction="#handleClockOut" />
+            <Button mnemonicParsing="false" text="Calculate Pay" onAction="#handleCalculatePay" />
           </children>
         </HBox>
       </children>

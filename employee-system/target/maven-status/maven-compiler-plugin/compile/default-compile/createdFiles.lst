@@ -1,5 +1,9 @@
-com\jbaker454\Main.class
+com\jbaker454\HRViewController$1.class
 com\jbaker454\AuthService.class
+com\jbaker454\EmployeeService.class
 com\jbaker454\AuthService$User.class
-com\jbaker454\DatabaseSetup.class
+com\jbaker454\HRViewController$EmployeeRecord.class
+com\jbaker454\HRViewController.class
+com\jbaker454\EmployeeViewController.class
+com\jbaker454\Main.class
 com\jbaker454\LoginController.class

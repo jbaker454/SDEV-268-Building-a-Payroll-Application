@@ -36,6 +36,7 @@ public class LoginController {
 
         AuthService.User user = AuthService.authenticate(username, password);
         if (user != null) {
+            AuthService.setCurrentUser(user);
             String role = user.role == null ? "" : user.role.toUpperCase();
             String fxmlPath;
             String title;
@@ -58,7 +59,8 @@ public class LoginController {
                 }
             }
 
-            Parent root = FXMLLoader.load(getClass().getResource(fxmlPath));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource(fxmlPath));
+            Parent root = loader.load();
             Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
             stage.setScene(new Scene(root));
             stage.setTitle(title);
