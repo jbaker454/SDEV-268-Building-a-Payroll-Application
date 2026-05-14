@@ -89,3 +89,20 @@ A Java-based payroll and employee management system using a SQLite database. The
 - Keep the database file under `database/` and reference it in the application configuration
 
 ## Next Steps
+### documentation Steps
+- uml designs (pictures store under repository root instead of project root)
+- screenshots of autamated testing
+- add application version number - what version are we on?
+### data Steps
+- add data entry testing and restictions to avoid errenous data
+- implement automatic user-employee creation and sync
+### money Steps
+- add tax calculations
+- add medical and dependents stipend (give additional money to weekly pay based on # of dependents and medical plan)
+- implement overtime
+
+## notable changes from initial desing (results from unclear or bad business rules)
+- didn't like employee-admin relation, added HR as a intermediary
+- User type selection taken away from the user, instead the type selection is pulled from the database on succesfull login.
+- employee, time entry, and salary screens scrapped due to bad seperation of responsabiilities, opting for user specific screen instead.
+- only giving user permissions based on user roles.

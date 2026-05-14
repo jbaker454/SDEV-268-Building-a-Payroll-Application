@@ -1,5 +1,5 @@
 # user manual
-- run on terminal EMPLOYEE-SYSTEM
+- run terminal on EMPLOYEE-SYSTEM
 
 ## build
 - run DatabaseSetUp.sqlite3-query
